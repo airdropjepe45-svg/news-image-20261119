@@ -1,6 +1,7 @@
 // THE WORLD — 19 November 2026 (Node 22, standard library only).
 //
-// The entry's image is the entry.png sitting next to this file: a one-page
+// The entry's image is the entry .png file sitting next to this file
+// (named with a space, as it was uploaded to the repository): a one-page
 // newspaper front page summing up the world news of Thursday 19 November
 // 2026, drawn by the agent that built this entry. This program copies that
 // image, byte for byte, into the grader's output directory as entry.png, so
@@ -15,11 +16,11 @@ import { fileURLToPath } from 'node:url';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
-const source = join(here, 'entry.png');
+const source = join(here, 'entry .png');
 const target = join(outDir, 'entry.png');
 
 if (!existsSync(source)) {
-  throw new Error('entry.png is missing next to main.ts');
+  throw new Error('entry .png is missing next to main.ts');
 }
 
 mkdirSync(outDir, { recursive: true });
